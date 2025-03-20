@@ -46,7 +46,7 @@ To get started, ensure you have the following:
 
 2. **Install Required Libraries**: Use pip to install the necessary libraries:
    ```bash
-   pip install pdfkit markdown
+   pip install -r requirements.txt
    ```
 
 3. **Install wkhtmltopdf**: Make sure `wkhtmltopdf` is installed and accessible in your system's PATH. 🔧
