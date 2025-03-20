@@ -4,6 +4,22 @@
 
 Welcome to **Sugar-MDtoPDF**! 🎉 The sweetest command-line tool for converting your Markdown files into beautifully formatted PDF documents! 📄✨ Whether you're a writer, developer, or just someone who loves Markdown, this tool is designed to make your life easier by transforming your text into polished PDFs with just a few simple commands. 🚀
 
+## Why This tool
+
+Are you tired of creating pdf for professional work? or you don't have enough time to stay on that shitty workspace and format your docs.
+Now no need to do all this.
+Just create a `.md` file in markdown language and left everything on this script.
+
+### Example MD file
+
+| ![MD 1](./img/output/1.jpg "Image") | ![MD 2](./img/output/2.jpg "Image") |
+|:---:|:---:|
+
+### After Using Tool
+| ![Output 1](./img/example/1.jpg "Image") | ![Output 2](./img/example/2.jpg "Image") | ![Output 3](./img/example/3.jpg "Image") |
+|:---:|:---:|:---:|
+
+
 ## Features
 
 - **Single File Conversion**: Effortlessly convert individual Markdown files to PDF. 📑➡️📄
