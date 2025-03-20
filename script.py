@@ -46,19 +46,16 @@ def single_file_mode():
     md_text = input("Enter File Path: ")
     md_content = openfile(md_text)
     print("Markdown content read from file:")
-    print(md_content)  # Debug print statement
-    
+    print(md_content)  
+        
     html_output = convert_md_to_html(md_content)
     print("Converted HTML content:")
-    print(html_output)  # Debug print statement
-    
-    # Read CSS content
+    print(html_output)  
+ 
     css_content = openfile("styles.css")
     
-    # Create HTML template
     html_template = template(css_content, html_output)
     
-    # Create a temporary directory
     temp_dir = "./temp"
     if not os.path.exists(temp_dir):
         os.mkdir(temp_dir)
@@ -66,11 +63,9 @@ def single_file_mode():
         temp_dir = "./temp"
     html_path = os.path.join(temp_dir, "output.html")
     
-    # Write the final HTML content to an output file
     out_file(html_template, html_path)
     print(f"HTML file created at: {html_path}")
     
-    # Convert HTML to PDF
     pdf_path = os.path.join(os.path.dirname(md_text), "output.pdf")
     pdfkit.from_file(html_path, pdf_path)
     print(f"PDF file created at: {pdf_path}")
@@ -80,7 +75,6 @@ def single_file_mode():
 
 def bulk_file_mode():
     folder_path = input("Enter Folder Path: ")
-    # Iterate through all .md files in the specified folder
     for filename in os.listdir(folder_path):
         if filename.endswith(".md"):
             md_file_path = os.path.join(folder_path, filename)
@@ -99,12 +93,12 @@ def bulk_file_mode():
             temp_dir = "./temp"
             if not os.path.exists(temp_dir):
                 os.mkdir(temp_dir)
-            html_path = os.path.join(temp_dir, f"{filename[:-3]}.html")  # Use the same name as the md file
-            
+            html_path = os.path.join(temp_dir, f"{filename[:-3]}.html")  
+                        
             out_file(html_template, html_path)
             print(f"HTML file created at: {html_path}")
             
-            pdf_path = os.path.join(folder_path, f"{filename[:-3]}.pdf")  # Use the same name as the md file
+            pdf_path = os.path.join(folder_path, f"{filename[:-3]}.pdf")  
             pdfkit.from_file(html_path, pdf_path)
             print(f"PDF file created at: {pdf_path}")
     
