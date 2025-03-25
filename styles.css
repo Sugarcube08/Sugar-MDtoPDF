@@ -22,15 +22,27 @@ code {
 }
 img { max-width: 100%; }
 table {
-    border-collapse: collapse;
     width: 100%;
-    margin: 1em 0;
-}
-th, td {
+    border-collapse: collapse;
     border: 1px solid #ddd;
-    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
 }
-th { background-color: #f4f4f4; }
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f6f8fa;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f6f8fa;
+}
 blockquote {
     border-left: 4px solid #ddd;
     padding-left: 1em;

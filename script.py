@@ -12,7 +12,18 @@ def convert_md_to_html(md_content):
     Returns:
         str: The converted HTML content.
     """
-    html_content = markdown.markdown(md_content, extensions=['fenced_code'])
+    html_content = markdown.markdown(md_content, extensions = [
+        'fenced_code',
+        'tables',
+        'toc',
+        'codehilite',
+        'extra',
+        'sane_lists',
+        'smarty',
+        'meta',
+        'nl2br',
+        'admonition'
+    ])
     return html_content
 
 def template(css_content, html_output):
