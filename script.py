@@ -76,9 +76,16 @@ def single_file_mode():
     
     out_file(html_template, html_path)
     print(f"HTML file created at: {html_path}")
+    options = {
+        'enable-local-file-access': '',  # Enable local file access
+        'margin-top': '10mm',           # Set top margin
+        'margin-right': '10mm',         # Set right margin
+        'margin-bottom': '10mm',        # Set bottom margin
+        'margin-left': '10mm',          # Set left margin
+    }
     
     pdf_path = os.path.join(os.path.dirname(md_text), "output.pdf")
-    pdfkit.from_file(html_path, pdf_path)
+    pdfkit.from_file(html_path, pdf_path, options)
     print(f"PDF file created at: {pdf_path}")
     
     shutil.rmtree(temp_dir)
@@ -108,9 +115,17 @@ def bulk_file_mode():
                         
             out_file(html_template, html_path)
             print(f"HTML file created at: {html_path}")
+            options = {
+                'enable-local-file-access': '',  # Enable local file access
+                'margin-top': '10mm',           # Set top margin
+                'margin-right': '10mm',         # Set right margin
+                'margin-bottom': '10mm',        # Set bottom margin
+                'margin-left': '10mm',          # Set left margin
+            }
+    
             
             pdf_path = os.path.join(folder_path, f"{filename[:-3]}.pdf")  
-            pdfkit.from_file(html_path, pdf_path)
+            pdfkit.from_file(html_path, pdf_path, options)
             print(f"PDF file created at: {pdf_path}")
     
     shutil.rmtree(temp_dir)
@@ -131,4 +146,4 @@ if __name__ == "__main__":
             break
         else:
             print("Exiting...")
-            break 
+            break
