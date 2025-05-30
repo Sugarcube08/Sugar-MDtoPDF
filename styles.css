@@ -5,22 +5,56 @@ body {
     padding: 20px;
     margin: 0;
 }
+
+
+/* Prevent page breaks inside critical blocks */
+
+pre,
+code,
+table,
+blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
 pre {
     background: #141414;
     border-radius: 4px;
     margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+    font-size: 0.95em;
+    white-space: pre-wrap;
+    /* wrap long lines */
+    word-wrap: break-word;
 }
+
 code {
     font-family: 'Fira Code', Consolas, Monaco, monospace;
     color: #c4c4c4;
 }
-:not(pre) > code {
+
+
+/* Inline code */
+
+:not(pre)>code {
     background: #f0f0f0;
     padding: 2px 4px;
     border-radius: 3px;
     color: #e83e8c;
 }
-img { max-width: 100%; }
+
+
+/* Images */
+
+img {
+    max-width: 100%;
+    page-break-inside: avoid;
+}
+
+
+/* Tables */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -29,7 +63,8 @@ table {
     margin-bottom: 16px;
 }
 
-th, td {
+th,
+td {
     padding: 8px;
     text-align: left;
     border: 1px solid #ddd;
@@ -43,12 +78,20 @@ th {
 tr:nth-child(even) {
     background-color: #f6f8fa;
 }
+
+
+/* Blockquotes */
+
 blockquote {
     border-left: 4px solid #ddd;
     padding-left: 1em;
     margin-left: 0;
     color: #666;
+    page-break-inside: avoid;
 }
+
+
+/* Headings */
 
 h1 {
     font-size: 3.0em;
@@ -56,16 +99,18 @@ h1 {
     border-bottom: 2px solid #eee;
     padding-bottom: 0.5rem;
     margin: 1.5rem 0;
+    page-break-after: avoid;
 }
 
 h2 {
     font-size: 2.1em;
     color: #34495e;
     margin: 1.5rem 0;
+    page-break-after: avoid;
 }
 
 h3 {
     font-size: 1.2em;
     color: #455a64;
+    page-break-after: avoid;
 }
-                    
